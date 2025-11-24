@@ -1,5 +1,7 @@
 # TTL Whisper
 
+<image src="ttl_whisper.gif">
+
 **Covert channel communication through ICMP TTL manipulation**
 
 TTLwhisper encodes secret messages into ICMP echo request packets by mapping morse 
