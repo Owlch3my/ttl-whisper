@@ -49,4 +49,3 @@ and generates minimal anomalies in network traffic analysis tools.
 
 Detection requires statistical analysis of TTL distributions across multiple packets 
 or baseline comparison with normal ICMP behavior for the host OS.
-```
