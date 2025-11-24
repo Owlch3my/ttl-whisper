@@ -30,10 +30,9 @@ standard deep packet inspection.
 - Red team covert channel demonstrations
 - Security research and IDS/IPS testing
 - Understanding ICMP-based exfiltration techniques
-```
 
 ## Technical Description
-```
+
 TTLwhisper implements a covert channel using ICMP echo requests with steganographically 
 encoded TTL (Time-To-Live) values. The tool converts plaintext to morse code, then maps 
 each morse symbol to a specific TTL range:
