@@ -15,6 +15,41 @@ standard deep packet inspection.
 4. **Transmit**: Sends ICMP packets with encoded TTL values
 5. **Decode**: Receiver captures packets and reverse-engineers message from TTL sequence
 
+## Linux Example
+```
+Step 1: Download the script
+chmod +x ttlwhisper.py
+
+Step 2: Start packet capture (in one terminal)
+sudo tcpdump -i any icmp -w capture.pcap
+
+Step 3: Send message (in another terminal)
+sudo python3 ttlwhisper.py "SECRET_MESSAGE"
+
+Step 4: Stop capture (Ctrl+C in tcpdump terminal)
+
+Decode in Wireshark
+Method 1: Manual Analysis
+
+Open capture.pcap in Wireshark
+Filter: icmp.type == 8 (Echo requests only)
+Add TTL column:
+
+Right-click any packet → Protocol Preferences → Add column
+Type: ip.ttl, Title: TTL
+
+
+Look at TTL column and decode:
+
+32-64 = . (dot)
+65-96 = - (dash)
+97-128 = | (letter separator)
+129-160 = / (word separator)
+161-192 = noise (ignore)
+
+Method 2: Use Decoder Script
+```
+
 ## Features
 
 - Cross-platform support (Windows/Linux/macOS)
